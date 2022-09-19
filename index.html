@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <main>
+      <section class="greeting">
+        <h2 class="title">
+          <span class="greeting-header"></span>
+          <input
+            type="text"
+            id="name"
+            placeholder="your name"
+            autocomplete="off"
+          />
+        </h2>
+      </section>
+
+      <section class="create-todo">
+        <form id="new-todo-form">
+          <h4>What's on you mind?</h4>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="buy coffee beans"
+            autocomplete="off"
+            required
+          />
+          <input type="submit" value="Add task" />
+        </form>
+      </section>
+
+      <section class="todo-list">
+        <h4>Tasks</h4>
+        <div class="list" id="todo-list">
+          <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+
+            <div class="todo-content">
+              <input type="text" value="play games till u drop" readonly />
+              <span>Monday Sep 19, 2022</span>
+            </div>
+
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+
+          <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+
+            <div class="todo-content">
+              <input type="text" value="play games till u drop" readonly />
+            </div>
+
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+:root {
+  --bg: #111111;
+  --light-black: #2f2f2f;
+  --dirty-white: #f6f6f6;
+  --gold: #ffcb74;
+  --danger: #d9534f;
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--light-black);
+}
+
+input:not([type="checkbox"]),
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+
+h4 {
+  color: var(--dirty-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.greeting .title {
+  display: flex;
+}
+
+.greeting .title input {
+  margin-left: 0.5rem;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.greeting .title,
+.greeting .title input {
+  color: var(--dirty-white);
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+.greeting .title input {
+  color: var(--gold);
+}
+
+.create-todo form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-todo input[type="text"] {
+  padding: 1rem 1.5rem;
+  background: rgba(246, 246, 246, 0.2);
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+  color: var(--dirty-white);
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+  font-size: 1.125rem;
+}
+.create-todo input::placeholder {
+  opacity: 0.6;
+  color: var(--dirty-white);
+}
+
+.create-todo input[type="text"]:focus {
+  border: 1px solid var(--gold);
+}
+
+.create-todo input[type="submit"] {
+  background: rgba(17, 17, 17, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  color: var(--dirty-white);
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  transition: 0.2s ease;
+}
+.create-todo input[type="submit"]:hover {
+  background: rgba(17, 17, 17, 1);
+}
+
+.todo-list .list {
+  margin: 1rem 0;
+}
+
+.todo-list .todo-item {
+  display: flex;
+  align-items: center;
+  background: rgba(246, 246, 246, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.todo-item {
+  border: 1px solid transparent;
+  transition: 0.2 ease;
+}
+
+.todo-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.todo-item label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-item .todo-content {
+  flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+  color: var(--dirty-white);
+  font-size: 1.125rem;
+  display: flex;
+}
+
+.todo-item .actions {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.todo-item.on-edit {
+  border: 1px solid var(--gold);
+}
+
+.todo-item .actions button {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+  transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions .edit {
+  margin-right: 0.5rem;
+  background: var(--bg);
+  min-width: 70px;
+}
+.todo-item .actions .delete {
+  background-color: var(--danger);
+}
+
+.todo-item .actions .edit:hover {
+  background: rgba(17, 17, 17, 0.8);
+}
+.todo-item .actions .delete:hover {
+  background: rgba(217, 83, 79, 0.8);
+}
+
+.todo-item .todo-content input {
+  width: 100%;
+}
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.todo-item input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  box-shadow: var(--business-glow);
+}
+
+.checkmark::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--gold);
+  transition: 0.2s ease;
+}
+
+input:checked ~ .checkmark::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+.todo-item {
+  position: relative;
+}
+
+.todo-content span {
+  position: absolute;
+  top: -30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  right: 200px;
+  background: #222222;
+  color: #fff;
+  display: none;
+}
+
+.todo-content span.span-active {
+  display: block;
+}
